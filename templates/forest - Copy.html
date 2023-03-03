@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>welcome page</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/materialize.css')}}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="C:/Users/saiku/PycharmProjects/waterPurifiers/templates/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="C:/Users/saiku/PycharmProjects/waterPurifiers/templates/static/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container"  class="brand-logo"><img src="C:\Users\saiku\PycharmProjects\waterPurifiers\templates\static\GMRIT_LOGO_1.jpeg">
+    </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h4 class="header center orange-text">Water Purifier Recommendation Based on Water Quality</h4>
+      <div class="row center">
+        <h5 class="header col s12 light">
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="ph"><b>Ph
+            <br>
+          <input placeholder="Enter the Ph" name="Ph" id="Ph" type="number" class="validate" value="7.0807" required>
+        </div>
+        <div class="input-field col s4">
+
+          <label for="Hardness"><b>Hardness </b></label>
+            <br>
+          <input id="Hardness" name="Hardness" placeholder="Enter Hardness in mg/l"  type="number" class="validate" value="196.3694" required>
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="Solids"><b>Solids</b></label>
+            <br>
+          <input id="Solids" name="Solids" placeholder="Enter Solids in ppm" type="number" class="validate" value="22014.0925" required>
+
+        </div>
+        <div class="input-field col s4">
+
+          <label for="Chloromines"><b>Chloromines</b></label>
+            <br>
+          <input id="Chloromines" name="Chloromines" placeholder="Enter Chloromines in mg/l"  type="number" class="validate" value="7.1222" required>
+
+        </div>
+        <div class="input-field col s4">
+
+          <label for="Sulphate"><b>Sulphate </b></label>
+            <br>
+          <input id="Sulphate" name="Sulphate" placeholder="Enter Sulphate in mg/l"  type="number" class="validate" value="333.7757" required>
+
+        </div>
+        <div class="input-field col s4">
+
+          <label for="Conductivity"><b>Conductivity </b></label>
+            <br>
+          <input id="Conductivity" name="Conductivity" placeholder="Enter Conductivity in S/cm "  type="number" class="validate" value="426.2051" required>
+
+        </div>
+        <div class="input-field col s4">
+
+          <label for="Organic_Carbon"><b>Organic _Carbon </b></label>
+            <br>
+          <input id="Organic_Carbon" name="Organic_Carbon" placeholder="Enter Organic_Carbon in mg/l"  type="number" class="validate" value="14.2849" required>
+
+        </div>
+        <div class="input-field col s4">
+
+          <label for="Trihalomethanes"><b>Trihalomethanes </b></label>
+            <br>
+          <input id="Trihalomethanes" name="Trihalomethanes" placeholder="Enter Trihalomethanes in ppb"  type="number" class="validate" value="66.3962" required>
+
+        </div>
+        <div class="input-field col s4">
+
+          <label for="Turbidity"><b>Turbidity </b></label>
+            <br>
+          <input id="Turbidity" name="Turbidity" placeholder="Enter Turbidity in NTU"  type="number" class="validate" value="3.9667" required>
+
+        </div>
+      </div>
+      
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Find Purifier</button>
+      </div>
+    </form>
+      <center>{{pred}}<br></center>
+      </div>
+
+      <br>
+    <br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+       <a class="orange-text text-lighten-3" href="http://materializecss.com"></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
